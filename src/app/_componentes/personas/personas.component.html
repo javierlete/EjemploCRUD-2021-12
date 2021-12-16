@@ -1,0 +1,38 @@
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Teléfono</th>
+      <th>Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of personas">
+      <th>{{p.id}}</th>
+      <td>{{p.nombre}}</td>
+      <td>{{p.apellidos}}</td>
+      <td>{{p.telefono}}</td>
+      <td>
+        <button (click)="editar(p)">Editar</button>
+        <button>Borrar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<form>
+  <div>
+    <label for="nombre">Nombre</label>
+    <input type="text" [(ngModel)]="persona.nombre" id="nombre" name="nombre">
+  </div>
+  <div>
+    <label for="apellidos">Apellidos</label>
+    <input type="text" [(ngModel)]="persona.apellidos" id="apellidos" name="apellidos">
+  </div>
+  <div>
+    <label for="telefono">Teléfono</label>
+    <input type="tel" [(ngModel)]="persona.telefono" id="telefono" name="telefono">
+  </div>
+</form>

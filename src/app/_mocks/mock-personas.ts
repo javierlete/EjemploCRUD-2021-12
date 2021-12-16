@@ -1,0 +1,7 @@
+import { Persona } from "src/app/_modelos/persona";
+
+export const PERSONAS: Persona[] = [
+  { id: 1, nombre: 'Javier', apellidos: 'Lete', telefono: '941231234' },
+  { id: 2, nombre: 'Pepe', apellidos: 'Pérez', telefono: '943214321' },
+  { id: 3, nombre: 'Juan', apellidos: 'García', telefono: '941321423' },
+];
