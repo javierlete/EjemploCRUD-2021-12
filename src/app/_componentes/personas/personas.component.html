@@ -16,7 +16,7 @@
       <td>{{p.apellidos}}</td>
       <td>{{p.telefono}}</td>
       <td>
-        <button (click)="editar(p)">Editar</button>
+        <button (click)="editar(p)">Editar</button> <!-- (segundo -> 0x300) -->
         <button (click)="borrar(p)">Borrar</button>
       </td>
     </tr>
@@ -26,7 +26,7 @@
 <form>
   <div>
     <label for="nombre">Nombre</label>
-    <input type="text" [(ngModel)]="persona.nombre" id="nombre" name="nombre">
+    <input type="text" [(ngModel)]="persona.nombre" id="nombre" name="nombre"> <!-- 0x300.nombre -->
   </div>
   <div>
     <label for="apellidos">Apellidos</label>

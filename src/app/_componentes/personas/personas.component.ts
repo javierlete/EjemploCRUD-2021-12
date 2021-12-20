@@ -8,8 +8,8 @@ import { Persona } from 'src/app/_modelos/persona';
   styleUrls: ['./personas.component.css']
 })
 export class PersonasComponent {
-  personas: Persona[] = PERSONAS;
-  persona: Persona = {
+  personas: Persona[] = PERSONAS; // 0x100
+  persona: Persona = { // 0x500 ... (segundo -> 0x300)
     id: 0,
     nombre: '',
     apellidos: '',
@@ -20,8 +20,8 @@ export class PersonasComponent {
     this.personas.push(this.persona);
   }
 
-  editar(persona: Persona): void {
-    this.persona = persona;
+  editar(persona: Persona): void { // (segundo -> 0x300)
+    this.persona = persona; // 0x300
   }
 
   borrar(persona: Persona): void {
