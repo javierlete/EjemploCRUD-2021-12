@@ -9,7 +9,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let p of personas">
+    <tr *ngFor="let p of personas"
+      [class.seleccionada]="p === persona">
       <th>{{p.id}}</th>
       <td>{{p.nombre}}</td>
       <td>{{p.apellidos}}</td>
