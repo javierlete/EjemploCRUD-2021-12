@@ -19,4 +19,8 @@ export class PersonasComponent {
   editar(persona: Persona): void {
     this.persona = persona;
   }
+
+  borrar(persona: Persona): void {
+    this.personas = this.personas.filter(p => p !== persona);
+  }
 }
