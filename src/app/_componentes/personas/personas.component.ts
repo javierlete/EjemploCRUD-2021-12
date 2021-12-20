@@ -16,6 +16,10 @@ export class PersonasComponent {
     telefono: ''
   };
 
+  anyadir(): void {
+    this.personas.push(this.persona);
+  }
+
   editar(persona: Persona): void {
     this.persona = persona;
   }
