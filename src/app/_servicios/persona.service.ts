@@ -1,6 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { PERSONAS } from '../_mocks/mock-personas';
+import { Observable } from 'rxjs';
 import { Persona } from '../_modelos/persona';
 
 @Injectable({
@@ -8,7 +8,11 @@ import { Persona } from '../_modelos/persona';
 })
 export class PersonaService {
 
+  url = 'http://localhost:3000/personas/';
+
+  constructor(private http: HttpClient) { }
+
   getPersonas(): Observable<Persona[]> {
-    return of(PERSONAS);
+    return this.http.get<Persona[]>(this.url);
   }
 }

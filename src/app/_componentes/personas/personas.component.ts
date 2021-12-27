@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { PERSONAS } from 'src/app/_mocks/mock-personas';
 import { Persona } from 'src/app/_modelos/persona';
 import { PersonaService } from 'src/app/_servicios/persona.service';
 
