@@ -1,42 +1,35 @@
 <table>
+  <caption>Listado de personas</caption>
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Nombre</th>
-      <th>Apellidos</th>
-      <th>Teléfono</th>
-      <th>Opciones</th>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Apellidos</th>
+      <th scope="col">Teléfono</th>
+      <th scope="col">Opciones</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let p of personas"
-      [class.seleccionada]="p === persona">
-      <th>{{p.id}}</th>
+    <tr *ngFor="let p of personas">
+      <th scope="row">{{p.id}}</th>
       <td>{{p.nombre}}</td>
       <td>{{p.apellidos}}</td>
       <td>{{p.telefono}}</td>
       <td>
-        <button (click)="editar(p)">Editar</button> <!-- (segundo -> 0x300) -->
-        <button (click)="borrar(p)">Borrar</button>
+        <button routerLink="/admin/{{p.id}}">Editar</button> <!-- (segundo -> 0x300) -->
+        <button (click)="borrar(p.id)">Borrar</button>
       </td>
     </tr>
   </tbody>
+  <tfoot>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <button routerLink="/admin/0">Añadir</button>
+      </td>
+    </tr>
+  </tfoot>
 </table>
-
-<form>
-  <div>
-    <label for="nombre">Nombre</label>
-    <input type="text" [(ngModel)]="persona.nombre" id="nombre" name="nombre"> <!-- 0x300.nombre -->
-  </div>
-  <div>
-    <label for="apellidos">Apellidos</label>
-    <input type="text" [(ngModel)]="persona.apellidos" id="apellidos" name="apellidos">
-  </div>
-  <div>
-    <label for="telefono">Teléfono</label>
-    <input type="tel" [(ngModel)]="persona.telefono" id="telefono" name="telefono">
-  </div>
-  <div>
-    <button (click)="anyadir()">Añadir</button>
-  </div>
-</form>

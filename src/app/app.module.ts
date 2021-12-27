@@ -5,11 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PersonasComponent } from './_componentes/personas/personas.component';
+import { PersonaComponent } from './_componentes/persona/persona.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PersonasComponent
+    PersonasComponent,
+    PersonaComponent
   ],
   imports: [
     BrowserModule,
