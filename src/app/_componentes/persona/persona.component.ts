@@ -31,8 +31,6 @@ export class PersonaComponent {
   }
 
   anyadir() {
-    alert(`anyadir(${JSON.stringify(this.persona)})`);
-
     if(this.persona.id) {
       this.personaService.putPersona(this.persona).subscribe(
         _ => this.location.back()

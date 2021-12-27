@@ -27,4 +27,8 @@ export class PersonaService {
   putPersona(persona: Persona): Observable<Persona> {
     return this.http.put<Persona>(this.url + persona.id, persona);
   }
+
+  deletePersona(id: number): Observable<any> {
+    return this.http.delete(this.url + id);
+  }
 }

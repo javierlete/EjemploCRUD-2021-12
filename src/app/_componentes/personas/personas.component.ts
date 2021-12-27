@@ -13,10 +13,16 @@ export class PersonasComponent implements OnInit {
   constructor(private personaService: PersonaService) {}
 
   ngOnInit() {
-    this.personaService.getPersonas().subscribe(personas => this.personas = personas);
+    this.cargarPersonas();
   }
 
   borrar(id: number) {
-    alert(`deletePersona(${id})`);
+    this.personaService.deletePersona(id).subscribe(
+      _ => this.cargarPersonas()
+    );
+  }
+
+  cargarPersonas() {
+    this.personaService.getPersonas().subscribe(personas => this.personas = personas);
   }
 }
