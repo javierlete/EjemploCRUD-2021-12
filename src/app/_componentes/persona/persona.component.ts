@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Persona } from 'src/app/_modelos/persona';
+import { PersonaService } from 'src/app/_servicios/persona.service';
 
 @Component({
   selector: 'app-persona',
@@ -16,13 +17,13 @@ export class PersonaComponent {
     telefono: ''
   };
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private personaService: PersonaService) {}
 
   ngOnInit() {
     this.persona.id = Number(this.route.snapshot.paramMap.get('id'));
 
     if (this.persona.id) {
-      alert(`getPersona(${this.persona.id})`);
+      this.personaService.getPersona(this.persona.id).subscribe(persona => this.persona = persona);
     }
   }
 
