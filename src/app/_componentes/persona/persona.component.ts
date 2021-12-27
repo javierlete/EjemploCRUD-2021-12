@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Persona } from 'src/app/_modelos/persona';
@@ -17,7 +18,9 @@ export class PersonaComponent {
     telefono: ''
   };
 
-  constructor(private route: ActivatedRoute, private personaService: PersonaService) {}
+  constructor(private route: ActivatedRoute, 
+              private personaService: PersonaService,
+              private location: Location) {}
 
   ngOnInit() {
     this.persona.id = Number(this.route.snapshot.paramMap.get('id'));
@@ -33,7 +36,9 @@ export class PersonaComponent {
     if(this.persona.id) {
       alert(`putPersona(${JSON.stringify(this.persona)})`);
     } else {
-      alert(`postPersona(${JSON.stringify(this.persona)})`);
+      this.personaService.postPersona(this.persona).subscribe(
+        _ => this.location.back()
+      );
     }
   }
 }

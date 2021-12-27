@@ -19,4 +19,8 @@ export class PersonaService {
   getPersona(id: number): Observable<Persona> {
     return this.http.get<Persona>(this.url + id);
   }
+
+  postPersona(persona: Persona): Observable<Persona> {
+    return this.http.post<Persona>(this.url, persona);
+  }
 }
