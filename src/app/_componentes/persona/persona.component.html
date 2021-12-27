@@ -1,17 +1,17 @@
 <form>
     <div>
-        <label for="nombre">Nombre</label>
-        <input type="text" [(ngModel)]="persona.nombre" id="nombre" name="nombre"> <!-- 0x300.nombre -->
+        <label class="form-label" for="nombre">Nombre</label>
+        <input class="form-control" [(ngModel)]="persona.nombre" id="nombre" name="nombre"> <!-- 0x300.nombre -->
     </div>
     <div>
-        <label for="apellidos">Apellidos</label>
-        <input type="text" [(ngModel)]="persona.apellidos" id="apellidos" name="apellidos">
+        <label class="form-label" for="apellidos">Apellidos</label>
+        <input class="form-control" type="text" [(ngModel)]="persona.apellidos" id="apellidos" name="apellidos">
     </div>
     <div>
-        <label for="telefono">Teléfono</label>
-        <input type="tel" [(ngModel)]="persona.telefono" id="telefono" name="telefono">
+        <label class="form-label" for="telefono">Teléfono</label>
+        <input class="form-control" type="tel" [(ngModel)]="persona.telefono" id="telefono" name="telefono">
     </div>
     <div>
-        <button (click)="anyadir()">Añadir</button>
+        <button class="btn btn-primary" (click)="anyadir()">Añadir</button>
     </div>
 </form>
