@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AlertaTipo } from 'src/app/_tipos/AlertaTipo';
 
 @Component({
   selector: 'app-alerta',
@@ -6,6 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./alerta.component.css']
 })
 export class AlertaComponent {
-  @Input() tipo: 'info'|'success'|'warning'|'danger' = 'info';
+  @Input() tipo: AlertaTipo = 'info';
   @Input() mensaje: string = 'Bienvenido a la aplicación de administración de personas';
 }
