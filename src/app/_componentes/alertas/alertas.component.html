@@ -1,3 +1,4 @@
-<div *ngFor="let alerta of alertas">
-    <app-alerta [tipo]="alerta.tipo" [mensaje]="alerta.mensaje"></app-alerta>
+<pre class="d-none">{{ alertaService.alertas | json }}</pre>
+<div *ngFor="let alerta of alertaService.alertas; let i = index">
+    <app-alerta [tipo]="alerta.tipo" [mensaje]="alerta.mensaje" (cerrar)="alertaService.eliminarAlerta(i)"></app-alerta>
 </div>
